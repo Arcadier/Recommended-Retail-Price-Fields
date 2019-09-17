@@ -17,8 +17,8 @@
 
 ### Installation:
 * Download the repository
-* Extract `admin` , `license` and `user` folders
-* Compress `admin`, `license` and `user` together
+* Extract `admin` and `user` folders
+* Compress `admin` and `user` together
 * Upload the resulting `.zip` file to your [developer dashboard](https://dashboard.sandbox.arcadier.io/account/login)
 * Create the relevant Custom Fields and/or Custom tables as explained in the [wiki](https://github.com/Arcadier/Recommended-Retail-Price-Fields/wiki)
 * Access the `Admin Portal` of your [sandbox marketplace](https://api.arcadier.com/sandbox-marketplace).
