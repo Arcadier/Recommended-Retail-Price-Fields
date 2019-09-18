@@ -42,8 +42,10 @@ function saveStatus(rrpStatus) {
       data: JSON.stringify(data),
       success: function(response) {
          if(rrpStatus == 1){
-          toastr.success('RRP plugin is enabled.');
-         }else { toastr.success('RRP plugin is disabled.');}
+         toastr.success('RRP plugin is enabled.');
+         }else { 
+           toastr.success('RRP plugin is disabled.');
+        }
         
       },
       error: function (jqXHR, status, err) {
@@ -70,8 +72,7 @@ $(document).ready(function() {
 
 });
 
- 
-  function getCookie (name) {
+function getCookie (name) {
     var value = '; ' + document.cookie;
     var parts = value.split('; ' + name + '=');
     if (parts.length === 2) return parts.pop().split(';').shift();

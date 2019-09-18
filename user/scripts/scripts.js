@@ -183,12 +183,10 @@ $(document).ready(function () {
 
 										$('#cfbox  .rrpprice').change(function() {
 											$('#add-item-area-custom-fields input[data-name="ORIGINAL PRICE (BEFORE DISCOUNT)"]').val($(this).val());
-											console.log($(this).val());
 										});
 
 										 $('#tab-additional active .btn-tab-validate').click(function() {
 											$('#add-item-area-custom-fields input[data-name="ORIGINAL PRICE (BEFORE DISCOUNT)"]').val(rrpinputvalue);
-											console.log(rrpinputvalue);
 
 										});
 										//validate to input only numeric in rrp textfield
@@ -199,7 +197,6 @@ $(document).ready(function () {
 											//parse value to 2 decimals
 										$('input[data-name="ORIGINAL PRICE (BEFORE DISCOUNT)"]').blur(function() {
 											if($('input[data-name="ORIGINAL PRICE (BEFORE DISCOUNT)"]').val() == ''){
-												console.log('null value');
 											}else{
 												var $input = $(this);
 												var price =  $input.val();
@@ -274,8 +271,6 @@ $(document).ready(function () {
 									});
 
 								})
-
-								
 								storeFrontPage3();
 							}
 
@@ -523,16 +518,17 @@ function storeFrontPage3(){
 						 }                    
 					if( $('#maketplace-type').val() == 'bespoke'){
 						if (document.body.className.includes('page-home')) {
-								var $elementRRPContainer = document.createElement('div'); 
-								$elementRRPContainer.setAttribute('class', 'rrp-container multi-currency-val'); 
-								$this.find(".shopimg-preview").append($elementRRPContainer);
-								getCustomFieldInfo($this, getcurrencyCode, rrpValue, response)
-								
-								var $elementItemPriceContainer = document.createElement('div'); 
-								$elementItemPriceContainer.setAttribute('class', 'item-price-containers'); 
-								$this.find(".item-price-containers, .rrp-container1").wrapAll($elementItemPriceContainer);
-								$this.find(".rrp-container").appendTo($this.find(".item-price"));				 
-				 	}}
+							var $elementRRPContainer = document.createElement('div'); 
+							$elementRRPContainer.setAttribute('class', 'rrp-container multi-currency-val'); 
+							$this.find(".shopimg-preview").append($elementRRPContainer);
+							getCustomFieldInfo($this, getcurrencyCode, rrpValue, response)
+							
+							var $elementItemPriceContainer = document.createElement('div'); 
+							$elementItemPriceContainer.setAttribute('class', 'item-price-containers'); 
+							$this.find(".item-price-containers, .rrp-container1").wrapAll($elementItemPriceContainer);
+							$this.find(".rrp-container").appendTo($this.find(".item-price"));				 
+						 }
+					}
 						
 					if( $('#maketplace-type').val() == 'spacetime'){
 						if (document.body.className.includes('page-home')){
@@ -598,29 +594,27 @@ function storeFrontPage3(){
 					}
 
 					if( $('#maketplace-type').val() == 'bespoke'){
-					
 					//search page
-					
-					if (document.body.className.includes('page-search')) {
-						var $elementRRPContainer = document.createElement('span'); 
-						$elementRRPContainer.setAttribute('class', 'rrp-container multi-currency-val'); 
-						$this.find(".shopimg-preview").append($elementRRPContainer);
-						$this.parent(".item-price").append($elementRRPContainer);
-						// $this.find(".item-price .rrp-container").css('color','#999');
-						$(".item-price:has(.rrp-container)").css("color", "#999");	
-						getCustomFieldInfo($this, getcurrencyCode, rrpValue, response)
+						if (document.body.className.includes('page-search')) {
+							var $elementRRPContainer = document.createElement('span'); 
+							$elementRRPContainer.setAttribute('class', 'rrp-container multi-currency-val'); 
+							$this.find(".shopimg-preview").append($elementRRPContainer);
+							$this.parent(".item-price").append($elementRRPContainer);
+							// $this.find(".item-price .rrp-container").css('color','#999');
+							$(".item-price:has(.rrp-container)").css("color", "#999");	
+							getCustomFieldInfo($this, getcurrencyCode, rrpValue, response)
 
-						var $elementItemPriceContainer = document.createElement('div'); 
-						$elementItemPriceContainer.setAttribute('class', 'item-price-container'); 
-						$this.find(".item-price, .rrp-container").wrapAll($elementItemPriceContainer);
-						$this.find(".rrp-container").insertBefore($this.find(".item-price"));
+							var $elementItemPriceContainer = document.createElement('div'); 
+							$elementItemPriceContainer.setAttribute('class', 'item-price-container'); 
+							$this.find(".item-price, .rrp-container").wrapAll($elementItemPriceContainer);
+							$this.find(".rrp-container").insertBefore($this.find(".item-price"));
 
-						$(".item-price:has(span) .get-item-id").css("color", "red");
-					}
-				}	
-			}
-		});	
-     }
+							$(".item-price:has(span) .get-item-id").css("color", "red");
+						}
+					}	
+				}
+			});	
+    	}
 	};
     $.ajax(settings);
 }
