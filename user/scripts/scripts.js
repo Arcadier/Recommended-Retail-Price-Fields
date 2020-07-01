@@ -36,7 +36,7 @@ function getMarketplaceCustomFields(callback) {
 }
 function getCurrBase(){
 	var settings = {
-	  'async': false,
+	 // 'async': false,
 	  'crossDomain': true,
 	  'url': '//' + HOST + '/api/v2/marketplaces',
 	  'method': 'GET',
