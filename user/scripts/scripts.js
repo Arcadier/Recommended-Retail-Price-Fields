@@ -241,6 +241,10 @@ $(document).ready(function () {
 							};
 								//SEARCH PAGE
 							if($(".page-search .storefront-items").length){
+								window.onscroll = function(ev) {
+									storeFrontPage3();
+								}
+							
 									storeFrontPage3();
 									//searching
 								$(function(){
@@ -262,6 +266,10 @@ $(document).ready(function () {
 
 							}
 							if($(".page-search #items-list").length){
+								window.onscroll = function(ev) {
+									storeFrontPage3();
+								}
+
 								$(function(){
 									$('#item-sort').change(function () { console.log('original function 1') });
 									var $select = $('#item-sort').change(function () { console.log('') });
@@ -307,6 +315,11 @@ $(document).ready(function () {
 						}
 									
 						if($(".page-search #items-list").length){
+
+							window.onscroll = function(ev) {
+								storeFrontPage2();
+							}
+							
 							storeFrontPage2();
 							$(function(){
 								$('#item-sort').change(function () { console.log('') });
@@ -477,6 +490,7 @@ function storeFrontPage2(){
 
 
 function storeFrontPage3(){
+
 	waitForElement('.item-list-section .item-box',function(){
 		var called = [];
 		var isthere; 
@@ -596,6 +610,7 @@ function storeFrontPage3(){
 					if( $('#maketplace-type').val() == 'bespoke'){
 					//search page
 						if (document.body.className.includes('page-search')) {
+
 							var $elementRRPContainer = document.createElement('span'); 
 							$elementRRPContainer.setAttribute('class', 'rrp-container multi-currency-val'); 
 							$this.find(".shopimg-preview").append($elementRRPContainer);
